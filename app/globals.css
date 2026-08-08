@@ -20,6 +20,33 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* form controls: keep them on-theme so typed text is always visible */
+input,
+textarea,
+select {
+  background-color: rgb(var(--smoke));
+  color: rgb(var(--ink));
+  border-radius: 0;
+}
+input::placeholder,
+textarea::placeholder {
+  color: rgb(var(--ash));
+  opacity: 1;
+}
+select option {
+  background: #141416;
+  color: #f4f4f0;
+}
+/* autofill on dark */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: rgb(var(--ink));
+  -webkit-box-shadow: 0 0 0 1000px rgb(var(--smoke)) inset;
+  caret-color: rgb(var(--ink));
 }
 
 html,
