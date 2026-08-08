@@ -6,14 +6,23 @@ module.exports = {
     "./lib/**/*.{js,jsx}",
   ],
   theme: {
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
-        ink: "#0a0a0a",
-        paper: "#ffffff",
-        smoke: "#f4f4f2",
-        stone: "#e7e6e2",
-        ash: "#8a8a8a",
-        line: "#e4e4e1",
+        // theme-aware tokens driven by CSS variables (see globals.css :root)
+        ink: "rgb(var(--ink) / <alpha-value>)", // primary text / contrast
+        paper: "rgb(var(--paper) / <alpha-value>)", // base surface
+        smoke: "rgb(var(--smoke) / <alpha-value>)", // raised panel
+        stone: "rgb(var(--stone) / <alpha-value>)", // subtle accents
+        ash: "rgb(var(--ash) / <alpha-value>)", // muted text
+        line: "rgb(var(--line) / <alpha-value>)", // hairline borders
       },
       fontFamily: {
         sans: ["Inter", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],

@@ -47,7 +47,7 @@ export default function ReelCard({ reel, muted, onToggleMute }) {
 
   return (
     <div className="relative h-full w-full flex items-center justify-center snap-start">
-      <div className="relative h-full aspect-[9/16] max-h-full bg-ink overflow-hidden">
+      <div className="relative h-full aspect-[9/16] max-h-full bg-black overflow-hidden">
         {failed ? (
           <SafeImage
             src={reel.poster}
@@ -70,7 +70,7 @@ export default function ReelCard({ reel, muted, onToggleMute }) {
         )}
 
         {/* gradient */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
 
         {/* play indicator */}
         {!playing && !failed && (
@@ -79,7 +79,7 @@ export default function ReelCard({ reel, muted, onToggleMute }) {
             className="absolute inset-0 flex items-center justify-center"
             aria-label="Play"
           >
-            <span className="w-16 h-16 rounded-full bg-paper/90 text-ink flex items-center justify-center text-2xl">
+            <span className="w-16 h-16 rounded-full bg-white/90 text-black flex items-center justify-center text-2xl">
               ▶
             </span>
           </button>
@@ -88,20 +88,20 @@ export default function ReelCard({ reel, muted, onToggleMute }) {
         {/* mute */}
         <button
           onClick={onToggleMute}
-          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-ink/50 text-paper flex items-center justify-center backdrop-blur"
+          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center backdrop-blur"
           aria-label={muted ? "Unmute" : "Mute"}
         >
           {muted ? "🔇" : "🔊"}
         </button>
 
         {/* caption + handle */}
-        <div className="absolute left-0 right-0 bottom-0 p-5 text-paper">
-          <div className="label text-paper/90">{reel.handle}</div>
+        <div className="absolute left-0 right-0 bottom-0 p-5 text-white">
+          <div className="label text-white/90">{reel.handle}</div>
           <h3 className="font-display text-xl font-semibold mt-1">
             {reel.title}
           </h3>
           {reel.caption && (
-            <p className="text-sm text-paper/85 mt-1 line-clamp-2">
+            <p className="text-sm text-white/85 mt-1 line-clamp-2">
               {reel.caption}
             </p>
           )}
@@ -109,7 +109,7 @@ export default function ReelCard({ reel, muted, onToggleMute }) {
           {product && (
             <Link
               href={`/product/${product.id}`}
-              className="mt-4 flex items-center gap-3 bg-paper/95 text-ink p-2 pr-4 max-w-xs hover:bg-paper transition"
+              className="mt-4 flex items-center gap-3 bg-white/95 text-black p-2 pr-4 max-w-xs hover:bg-white transition"
             >
               <span className="w-12 h-14 bg-smoke overflow-hidden shrink-0">
                 <SafeImage

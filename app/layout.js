@@ -4,6 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Announcement from "@/components/Announcement";
 import BackToTop from "@/components/BackToTop";
+import Cursor from "@/components/Cursor";
+import Grain from "@/components/Grain";
+import Preloader from "@/components/Preloader";
 
 export const metadata = {
   title: "TRENDING KAPDE WALA — Modern Fashion",
@@ -34,6 +37,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen flex flex-col bg-paper text-ink">
         <StoreProvider>
+          <Preloader />
+          <Grain />
+          <Cursor />
           <Announcement />
           <Header />
           <main className="flex-1">{children}</main>
